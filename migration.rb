@@ -40,7 +40,7 @@ class Migrate
 				request = Net::HTTP::Post.new(uri)
 				request.content_type = "application/json"
 				request["Accept"] = "application/json"
-				request["Api-Key"] = "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"
+				request["Api-Key"] = "HERE GOES THE API KEY FROM SENDINBLUE"
 				request.body = JSON.dump({
 								            "email": "#{m.email}",
 								            "attributes": {
@@ -91,7 +91,7 @@ class Migrate
 		request = Net::HTTP::Post.new(uri)
 		request.content_type = "application/json"
 		request["Accept"] = "application/json"
-		request["Api-Key"] = "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"
+		request["Api-Key"] = "HERE GOES THE API KEY FROM SENDINBLUE"
 		request.body = JSON.dump({"emails": data_list })
 
 
@@ -114,7 +114,7 @@ class Migrate
 				request = Net::HTTP::Post.new(uri)
 				request.content_type = "application/json"
 				request["Accept"] = "application/json"
-				request["Api-Key"] = "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"
+				request["Api-Key"] = "HERE GOES THE API KEY FROM SENDINBLUE"
 				request.body = JSON.dump({"emails": [a] })
 
 				req_options = {
@@ -148,7 +148,7 @@ class Migrate
 			uri = URI.parse(url)
 			request = Net::HTTP::Get.new(uri)
 			request["Accept"] = "application/json"
-			request["Api-Key"] = "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"
+			request["Api-Key"] = "HERE GOES THE API KEY FROM SENDINBLUE"
 
 			req_options = {
 			  use_ssl: uri.scheme == "https",
@@ -168,7 +168,7 @@ class Migrate
 		uri = URI.parse("https://api.sendinblue.com/v3/contacts/lists/#{id}")
 		request = Net::HTTP::Delete.new(uri)
 		request["Accept"] = "application/json"
-		request["Api-Key"] = "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"
+		request["Api-Key"] = "HERE GOES THE API KEY FROM SENDINBLUE"
 
 		req_options = {
 		  use_ssl: uri.scheme == "https",
@@ -185,7 +185,7 @@ class Migrate
 		request = Net::HTTP::Post.new(uri)
 		request.content_type = "application/json"
 		request["Accept"] = "application/json"
-		request["Api-Key"] = "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"
+		request["Api-Key"] = "HERE GOES THE API KEY FROM SENDINBLUE"
 		request.body = JSON.dump({
 		                         "name" => "#{list_name}",
 		                         "folderId" => 1
