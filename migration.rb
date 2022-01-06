@@ -143,7 +143,8 @@ class Migrate
 	def self.get_all_list
 		lists =[]
 		n=0
-		while n < 5
+		# x is the number of pages in the list section. This means, it will check each page of lists. You will need to check your account for this number
+		while n < x 
 			url ="https://api.sendinblue.com/v3/contacts/lists?limit=50&offset=#{n}&sort=desc"
 			uri = URI.parse(url)
 			request = Net::HTTP::Get.new(uri)
