@@ -13,7 +13,7 @@ class Migrate
 	def self.last_method(data_list, list, list_id, non_list_id, bad_emails)
 
 		puts "Adding #{data_list.count} to #{list.name}"
-	    to_create = create_data_list(data_list, list_id, bad_emails)
+	        to_create = create_data_list(data_list, list_id, bad_emails)
 
 		if to_create.count != 0
 			puts "to_create #{to_create.count}"
@@ -42,32 +42,32 @@ class Migrate
 				request["Accept"] = "application/json"
 				request["Api-Key"] = "HERE GOES THE API KEY FROM SENDINBLUE"
 				request.body = JSON.dump({
-								            "email": "#{m.email}",
-								            "attributes": {
-								              "NOMBRE":"#{m.first_name == nil ? "": m.first_name }",
-								              "APELLIDOS":"#{m.last_name == nil ? "": m.last_name }",
-								              "CONTACT": "#{m.contact == nil ? "" : m.contact }",
-								              "SKYPE": "#{ (m.meta !=nil && m.meta.skype !=nil )? m.meta.skype : "" }",
-								              "TWITTER":"#{(m.meta !=nil && m.meta.twitter !=nil) ? m.meta.twitter : ""}",
-								              "Fecha de adicion": "#{m.created_at == nil ? "": m.created_at }",
-								              "Ultima modificacion": "#{m.updated_at == nil ? "": m.updated_at }",
-								              "JOINED_AT": "#{m.joined_at == nil ? "": m.joined_at }",
-								              "ACTION_HISTORY": "#{m.action_history == nil ? "": m.action_history }",
-								              "POINT_PERSON_ID": "#{m.point_person_id == nil ? "": m.point_person_id }",
-								              "ROLE_ID": "#{m.role_id == nil ? "": m.role_id }",
-								              "LAST_DONATED": "#{m.last_donated == nil ? "": m.last_donated }",
-								              "DONATIONS_COUNT": "#{m.donations_count == nil ? "": m.donations_count }",
-								              "AVERAGE_DONATION": "#{m.average_donation == nil ? "": m.average_donation }",
-								              "HIGHEST_DONATION": "#{m.highest_donation == nil ? "": m.highest_donation }",
-								              "MOSAIC_GROUP": "#{m.mosaic_group == nil ? "": m.mosaic_group }",
-								              "MOSAIC_CODE": "#{m.mosaic_code == nil ? "": m.mosaic_code }",
-								              "ENTRY_POINT": "#{m.entry_point == nil ? "": m.entry_point }",
-								              "LATITUDE": "#{m.latitude == nil ? "": m.latitude }",
-								              "LONGITUDE": "#{m.longitude == nil ? "": m.longitude }",
-								              "TITLE": "#{m.title == nil ? "": m.title }",
-								              "GENDER": "#{m.gender == nil ? "": m.gender }",
-								              "DONATION_PREFERENCE": "#{m.donation_preference == nil ? "": m.donation_preference }"
-								            }
+							    "email": "#{m.email}",
+							    "attributes": {
+							      "NOMBRE":"#{m.first_name == nil ? "": m.first_name }",
+							      "APELLIDOS":"#{m.last_name == nil ? "": m.last_name }",
+							      "CONTACT": "#{m.contact == nil ? "" : m.contact }",
+							      "SKYPE": "#{ (m.meta !=nil && m.meta.skype !=nil )? m.meta.skype : "" }",
+							      "TWITTER":"#{(m.meta !=nil && m.meta.twitter !=nil) ? m.meta.twitter : ""}",
+							      "Fecha de adicion": "#{m.created_at == nil ? "": m.created_at }",
+							      "Ultima modificacion": "#{m.updated_at == nil ? "": m.updated_at }",
+							      "JOINED_AT": "#{m.joined_at == nil ? "": m.joined_at }",
+							      "ACTION_HISTORY": "#{m.action_history == nil ? "": m.action_history }",
+							      "POINT_PERSON_ID": "#{m.point_person_id == nil ? "": m.point_person_id }",
+							      "ROLE_ID": "#{m.role_id == nil ? "": m.role_id }",
+							      "LAST_DONATED": "#{m.last_donated == nil ? "": m.last_donated }",
+							      "DONATIONS_COUNT": "#{m.donations_count == nil ? "": m.donations_count }",
+							      "AVERAGE_DONATION": "#{m.average_donation == nil ? "": m.average_donation }",
+							      "HIGHEST_DONATION": "#{m.highest_donation == nil ? "": m.highest_donation }",
+							      "MOSAIC_GROUP": "#{m.mosaic_group == nil ? "": m.mosaic_group }",
+							      "MOSAIC_CODE": "#{m.mosaic_code == nil ? "": m.mosaic_code }",
+							      "ENTRY_POINT": "#{m.entry_point == nil ? "": m.entry_point }",
+							      "LATITUDE": "#{m.latitude == nil ? "": m.latitude }",
+							      "LONGITUDE": "#{m.longitude == nil ? "": m.longitude }",
+							      "TITLE": "#{m.title == nil ? "": m.title }",
+							      "GENDER": "#{m.gender == nil ? "": m.gender }",
+							      "DONATION_PREFERENCE": "#{m.donation_preference == nil ? "": m.donation_preference }"
+							    }
 			                            })
 
 				req_options = {
