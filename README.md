@@ -4,7 +4,7 @@ migration_identity
 
 to run this script from local terminal and heroku configuration use the following command:
 ```
-cat /Users/crojasu/Desktop/migration/migration.rb | heroku run console --app=levelup-identity --no-tty
+cat .path-to/migration.rb | heroku run console --app=levelup-identity --no-tty
 ```
 This script will go for each list in your identity account and compare it with a list in your sendinblue Account. If the members of the list are range diference of 30 people from the one in sendinblue will delete that list in sendinblue and build it from scratch.
 IF the member of the identity account is not a contact in Sendinblue it will create it migrating the following attributes:
